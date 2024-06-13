@@ -1,8 +1,8 @@
-Online Examination System
+# Online Examination System
 
 This is an Online Examination System built with ReactJS, Tailwind CSS, Node.js, Express, and MongoDB.
 
-Features
+# Features
 
 Authentication: User login and registration.
 
@@ -14,7 +14,7 @@ Exam Taking: Take exams with timer and auto-submission.
 
 Result Reporting: View results after exam completion.
 
-Technologies Used
+# Technologies Used
 
 Frontend: ReactJS, Tailwind CSS
 
