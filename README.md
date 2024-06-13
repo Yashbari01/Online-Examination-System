@@ -24,7 +24,7 @@ Database: MongoDB
 
 # Clone the repository
 
-git clone 
+git clone https://github.com/Yashbari01/Online-Examination-System.git
 
 cd Online-Examination-System
 
