@@ -14,7 +14,7 @@ Backend: Node.js, Express
 Database: MongoDB
 
 Clone the repository
-git clone <repository-url>
+git clone 
 cd Online-Examination-System
 
 Install dependencies
@@ -23,8 +23,9 @@ cd backend
 npm install
 
 # Install frontend dependencies
-cd ../frontend
+cd frontend
 npm install
+
 Set up environment variables
 Create a .env file in the backend directory with the following variables:PORT=5000
 MONGODB_URI=mongodb://localhost:27017/examination_system
