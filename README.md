@@ -5,15 +5,21 @@ This is an Online Examination System built with ReactJS, Tailwind CSS, Node.js, 
 Features
 
 Authentication: User login and registration.
+
 Exam Management: Create, update, delete exams.
+
 Question Management: Manage questions for exams.
+
 Exam Taking: Take exams with timer and auto-submission.
+
 Result Reporting: View results after exam completion.
 
 Technologies Used
 
 Frontend: ReactJS, Tailwind CSS
+
 Backend: Node.js, Express
+
 Database: MongoDB
 
 Clone the repository
