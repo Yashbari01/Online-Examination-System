@@ -52,7 +52,7 @@ MONGODB_URI=mongodb://localhost:27017/examination_system
 
 JWT_SECRET=your_jwt_secret
 
-Run the application
+# Run the application
 
 # Start the backend server (from the backend directory)
 
@@ -62,10 +62,10 @@ npm start
 
 npm start
 
-Access the application
+# Access the application
 
 Open your browser and go to http://localhost:3000 to view the application.
 
-Contact
+# Contact
 
 For any inquiries or issues regarding this project, please contact Yash Bari at 24yashbari@gmail.com.
