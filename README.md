@@ -25,6 +25,7 @@ Database: MongoDB
 # Clone the repository
 
 git clone 
+
 cd Online-Examination-System
 
 Install dependencies
@@ -43,7 +44,10 @@ npm install
 
 # Set up environment variables
 
-Create a .env file in the backend directory with the following variables:PORT=5000
+Create a .env file in the backend directory with the following variables:
+
+PORT=5000
+
 MONGODB_URI=mongodb://localhost:27017/examination_system
 
 JWT_SECRET=your_jwt_secret
