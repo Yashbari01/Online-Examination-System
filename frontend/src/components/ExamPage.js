@@ -31,43 +31,64 @@ function ExamPage() {
   };
 
   return (
-<div className="min-h-screen bg-green-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-    <div className="md:flex">
-      <div className="p-8">
-        {score !== null ? (
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-blue-900 mt-8">Your score is: {score}</h2>
-            <p className="text-lg text-gray-700 mt-4">Thank you for taking the exam!</p>
-          </div>
-        ) : (
-          <>
-            <h1 className="text-3xl font-extrabold text-blue-900 mb-8">{exam.title}</h1>
-            <p className="text-lg text-gray-700 mb-8">{exam.description}</p>
-            {exam.questions && exam.questions.map((question, index) => (
-              <div key={index} className="mb-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{question.questionText}</h3>
-                {question.options.map((option, optionIndex) => (
-                  <div key={optionIndex} className="flex items-center mb-2">
-                    <input
-                      type="radio"
-                      name={`question-${index}`}
-                      value={optionIndex}
-                      onChange={() => handleChange(index, optionIndex)}
-                      className="mr-2"
-                    />
-                    <label className="text-lg text-gray-700">{option}</label>
-                  </div>
-                ))}
+<>
+<div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+          <div className="p-8 md:p-12">
+            {score !== null ? (
+              <div className="text-center py-16">
+                <h2 className="text-5xl font-bold text-indigo-900 mb-6">Your Score: {score}</h2>
+                <p className="text-2xl text-gray-700 mb-10">Thank you for completing the exam!</p>
+                <button 
+                  onClick={() => window.location.href='/exam'} 
+                  className="mt-8 py-3 px-8 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-lg font-semibold rounded-full shadow-lg hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1"
+                >
+                  Back to Exams
+                </button>
               </div>
-            ))}
-            <button onClick={submitExam} className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-blue-600 hover:bg-blue-700">Submit</button>
-          </>
-        )}
+            ) : (
+              <>
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-8">{exam.title}</h1>
+                <p className="text-xl text-gray-700 mb-10">{exam.description}</p>
+                <form onSubmit={(e) => { e.preventDefault(); submitExam(); }}>
+                  {exam.questions && exam.questions.map((question, index) => (
+                    <div key={index} className="mb-10 p-8 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl shadow-md">
+                      <h3 className="text-2xl font-bold text-indigo-900 mb-6">
+                        Question {index + 1}: {question.questionText}
+                      </h3>
+                      <div className="space-y-4">
+                        {question.options.map((option, optionIndex) => (
+                          <label key={optionIndex} className="flex items-center space-x-4 p-4 rounded-xl hover:bg-white transition duration-200 ease-in-out cursor-pointer">
+                            <input
+                              type="radio"
+                              name={`question-${index}`}
+                              value={optionIndex}
+                              onChange={() => handleChange(index, optionIndex)}
+                              className="form-radio h-6 w-6 text-indigo-600 focus:ring-indigo-500"
+                            />
+                            <span className="text-lg text-gray-800">{option}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                  <div className="mt-12 flex justify-end">
+                    <button 
+                      type="submit"
+                      className="py-4 px-10 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-lg font-semibold rounded-full shadow-lg hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1"
+                    >
+                      Submit Exam
+                    </button>
+                  </div>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+</>
   );
 }
 
